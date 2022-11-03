@@ -1,0 +1,54 @@
+.game {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.gameHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.gameTitle {
+    font-size: 32px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.winner {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.restartButton {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration: none;
+    padding: 8px 10px;
+    text-transform: capitalize;
+    min-width: 120px;
+    text-align: center;
+    background: var(--primaryDark);
+    color: var(--primaryWhite);
+    border-radius: 4px;
+    margin-top: 20px;
+    border: none;
+}
+
+.player1 {
+    color: var(--primaryGreen);
+}
+
+.player2 {
+    color: var(--primaryBlue);
+}

@@ -1,0 +1,33 @@
+.gameGrid {
+    align-self: center;
+}
+
+.gameGridRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 2px;
+    margin-bottom: 2px;
+}
+
+.gridItem {
+    width: 65px;
+    height: 65px;
+    background: var(--lightGrey);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.gridItem1 {
+    color: var(--primaryGreen);
+}
+
+.gridItem2 {
+    color: var(--primaryBlue);
+}

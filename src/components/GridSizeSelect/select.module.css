@@ -1,0 +1,22 @@
+.selectBox {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.selectLabel {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.selectLabel::first-letter {
+    text-transform: capitalize;
+}
+
+.selectInput {
+    padding: 5px 10px;
+    border: 1px solid lightgray;
+    font-size: 16px;
+    border-radius: 3px;
+}
