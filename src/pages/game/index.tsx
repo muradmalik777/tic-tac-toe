@@ -24,6 +24,7 @@ const TicTacToe: React.FC = () => {
     const [gameDraw, setDraw] = useState(false);
     const [ended, setEnded] = useState(false);
     const [winner, setWinner] = useState("");
+    const [scores, setScores] = useState<{ [key: string]: number }>({});
 
     const initGame = () => {
         setGrid(GameService.createGrid(gridSize));
@@ -49,6 +50,14 @@ const TicTacToe: React.FC = () => {
 
     useEffect(checkGameStatus, [currentTurn, grid]);
 
+    const calculateScore = () => {
+        const newScores = { ...scores };
+        newScores[winner] = (newScores[winner] || 0) + 1;
+        setScores(newScores);
+    };
+
+    useEffect(calculateScore, [ended, winner]);
+
     const changeTurn = () => {
         let nextTurn = currentTurn === PLAYER1 ? PLAYER2 : PLAYER1;
         setCurrentTurn(nextTurn);
@@ -72,6 +81,13 @@ const TicTacToe: React.FC = () => {
             </div>
             <Players turn={currentTurn} />
             <GameGrid grid={grid} mark={mark} />
+            <div className={styles.scores}>
+                <p className={styles.scoreTitle}>Game score:</p>
+                <div className={styles.playerScores}>
+                    <p className={styles.player1}>Player1: {scores[PLAYER1_MARK] || 0}</p>
+                    <p className={styles.player2}>Player2: {scores[PLAYER2_MARK] || 0}</p>
+                </div>
+            </div>
             {(gameDraw || ended) && (
                 <>
                     {winner && (
